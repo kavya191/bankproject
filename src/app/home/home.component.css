@@ -1,0 +1,90 @@
+.background{
+    /* background-image: url(../../assets/bank2.jpg); 
+    background-size: 100% 100%;*/
+    height: 100vh; 
+    background-color: black;
+} 
+.profile{
+    border-radius: 4rem;
+    transition: 1s ease-in-out;  
+}
+.profile:hover{
+    transform: scale(1.1);
+    
+}
+.enquiry{
+    border-radius: 4rem;
+    transition: 1s ease-in-out;  
+}
+.enquiry:hover{
+    transform: scale(1.1);
+    
+}
+.transfer{
+    border-radius: 4rem;  
+    transition: 1s ease-in-out;
+}
+.transfer:hover{
+    transform: scale(1.1);
+    
+}
+.statement{
+    border-radius: 4rem;  
+    transition: 1s ease-in-out;
+}
+.statement:hover{
+    transform: scale(1.1);
+    
+}
+.logout {
+    border-radius: 4rem;  
+    transition: 1s ease-in-out;
+}
+.logout :hover{
+    transform: scale(1.1);
+    
+}
+.delete{
+    border-radius: 4rem;  
+    transition: 1s ease-in-out;
+}
+.delete:hover{
+    transform: scale(1.1);
+    
+}
+img,p{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:rgb(11, 143, 143);
+}
+img{
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    mix-blend-mode:darken;
+    border-radius: 1.5rem;
+    
+}
+
+button{
+    text-align: center;
+}
+input{
+    color: white;
+}
+
+h5,h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    color: #1c1c1c;;
+  
+}
+p{
+    color: #1c1c1c;
+}
+.bank{
+    background-color: rgb(235, 243, 243);
+}
+   
+

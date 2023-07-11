@@ -1,0 +1,52 @@
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+   
+    color: hwb(180 33% 44%) ;
+}
+
+th{
+    background-color: hwb(180 33% 44%);
+    padding:0.5rem;
+  
+}
+
+.main_section{
+    height: 100vh;
+}
+.statementbtn{
+    display: flex;
+    justify-content: end;
+   
+}
+.btn-group{
+    background-color: hwb(180 33% 44%);
+    color: white;
+    
+}
+.exportbtn{
+    display: flex;
+    justify-content: end;
+    margin-right: 3%;
+    
+}
+button{
+    background-color: hwb(180 33% 44%);
+    color: white;
+}
+.homebtn{
+    display: flex;
+    justify-content: end;
+
+}
+table{
+    /* display: flex;
+    justify-content: center; */
+    /* border-spacing: 30px; */
+    
+   
+   
+}
+/* thead{
+    padding: 1.5rem;
+} */

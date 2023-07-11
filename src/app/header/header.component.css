@@ -1,0 +1,15 @@
+.nav{
+  margin-left: 1em;
+}
+.icon{
+  margin-right: 1em;
+}
+.navbar{
+  background: hwb(180 33% 44%);
+}
+.text{
+  color: white;
+}
+a{
+  text-shadow: 1px 1px;
+}
