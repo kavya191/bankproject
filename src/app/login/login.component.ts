@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,26 @@ export class LoginComponent  {
   pass:any=""
 
 
+  //event binding using templete rendering variable
+  // login(a:any,b:any){
+ //initialize cheythuvechekkunna dataye this keyword vechu methodil access cheythu run cheyyamm
+  //   this.acc=a.value
+  //   this.pass=b.value
+  //   console.log(this.acc);
+  //   console.log(this.pass);
+    
+    
+  // }
+  ////NgModel
+  constructor(private route:Router){}
   login(){
-    alert("Logged In")
+    // alert("Logged In")
+    // console.log(this.acc);
+    // console.log(this.pass);
+    this.route.navigateByUrl("home")
+    
+    
+
   }
 
   accnoChange(event:any){

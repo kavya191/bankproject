@@ -34,14 +34,17 @@
                   
                    
                     <div class="p-2">
-                        <input type="number" (change)="accnoChange($event)" id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                        <input type="number" [(ngModel)]="acc" (change)="accnoChange($event)" id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                        <!-- <input type="number" #acc id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;"> -->
                     </div>
                     <div class="p-2">
-                        <input type="password" (change)="passChange($event)" id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                        <input type="password" [(ngModel)]="pass" (change)="passChange($event)" id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                         <!-- <input type="password" #pass id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;"> -->
                     </div>
-                    <p class="text-white">Don't have an account <a href="">Register</a></p>
+                    <p class="text-white">Don't have an account <a href="register">Register</a></p>
                   
                     <div class=" log-btn mt-3 mb-4">
+                        <!-- <button class="btn text-center" (click)="login(acc,pass)">Sign In</button> -->
                         <button class="btn text-center" (click)="login()">Sign In</button>
                     </div>
             
