@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
 
-  constructor(private rout:Router){}
+  constructor(private rout:Router){} //Router -class
 
 
   signup(){
-   this.rout.navigateByUrl("")
+   this.rout.navigateByUrl("") //navigateByUrl -module
   }
 
 }

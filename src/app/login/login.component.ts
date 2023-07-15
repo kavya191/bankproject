@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatastorageService } from '../service/datastorage.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ export class LoginComponent  {
   userPass="Enter Password..."
   acc:any=""
   pass:any=""
+  dataService:any=""
 
 
   //event binding using templete rendering variable
@@ -25,8 +27,18 @@ export class LoginComponent  {
     
   // }
   ////NgModel
-  constructor(private route:Router){}
+  constructor(private route:Router,private ds:DatastorageService){}
+
+  ngOnInit():void{
+ this.dataService=this.ds.sData
+ console.log(this.dataService);
+ 
+    
+  }
+
   login(){
+
+    this.ds.accessData("data passed to service data file  ")
     // alert("Logged In")
     // console.log(this.acc);
     // console.log(this.pass);

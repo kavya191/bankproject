@@ -1,0 +1,31 @@
+Data Binding
+---------------------
+1. One way Binding  - one dimensional binding
+                    - communication between data
+                    - ts->html , html->ts
+
+    methods
+    -------------
+    1.1 Component to view binding - ts->html
+        component-ts
+        view-html
+        1.1.1 string interpollation - {{data}}
+        - display data in html file directly
+        - where ever  we want to disply data put datastoring variable name inside {{}} backet
+        1.1.2 property binding - [propertyName]="data"
+        - display data 
+
+    1.2 View to component Binding - html->ts
+        1.2.1 event binding -(eventName)="methodname()"
+        1.2.2 $event binding-(eventname)="methodName($event)
+            -event nadakkunna time data access cheyyam. passes an angument when calling method().
+        1.2.3 Event Binding using templete rendering variable - #datavariable
+        html->html data trasferring
+2.Two way binding
+---------------------------
+html->ts ts->html
+    2.1 NgModel -[(ngModel)]="variable"
+                - changing data in ts and html automatically
+                - data changing in html at the same time data change in their corresponding ts file
+                - To get NgModel  we wa.nt to import an external module called formsmodule
+                - ids and name should be unique when using 2 way binding
