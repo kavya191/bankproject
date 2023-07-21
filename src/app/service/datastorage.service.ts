@@ -9,9 +9,9 @@ export class DatastorageService {
 
   constructor() { }
 
-  accessData(data:any){
-    console.log(data);
+  // accessData(data:any){
+  //   console.log(data);
     
 
-  }
+  // }
 }

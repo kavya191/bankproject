@@ -28,4 +28,4 @@ html->ts ts->html
                 - changing data in ts and html automatically
                 - data changing in html at the same time data change in their corresponding ts file
                 - To get NgModel  we wa.nt to import an external module called formsmodule
-                - ids and name should be unique when using 2 way binding
+                - ids and name should be unique when using 2 way bindingng

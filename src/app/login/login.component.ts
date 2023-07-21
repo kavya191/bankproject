@@ -30,15 +30,15 @@ export class LoginComponent  {
   constructor(private route:Router,private ds:DatastorageService){}
 
   ngOnInit():void{
- this.dataService=this.ds.sData
- console.log(this.dataService);
+//  this.dataService=this.ds.sData
+//  console.log(this.dataService);
  
     
   }
 
   login(){
 
-    this.ds.accessData("data passed to service data file  ")
+    // this.ds.accessData("data passed to service data file  ")
     // alert("Logged In")
     // console.log(this.acc);
     // console.log(this.pass);
