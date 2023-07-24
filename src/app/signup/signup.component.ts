@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,12 +8,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  //model form for signup form
 
-  constructor(private rout:Router){} //Router -class
+  signUpModelForm=this.fb.group({
+    //validation - usr validator class
+    accNo:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    uName:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],
+    pwd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
+    cpwd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
+
+  })
+  pwsMatch:boolean=false
+
+  constructor(private rout:Router,private fb:FormBuilder){} //Router -class
 
 
   signup(){
-   this.rout.navigateByUrl("") //navigateByUrl -module
+    let path=this.signUpModelForm.value
+    let accNo=path.accNo
+    let uname=path.uName
+    let pwd=path.pwd
+    let cpwd=path.cpwd
+    console.log(accNo,uname,pwd,cpwd);
+    if(this.signUpModelForm.valid){
+      if(pwd == cpwd){
+        this.pwsMatch=false // same password
+  
+      }else{
+        this.pwsMatch=true//password doesn't match
+      }
+    }else{
+      alert("invalid form")
+    }
+    
+
+    
+    
+  //  this.rout.navigateByUrl("") //navigateByUrl -module
   }
 
 }

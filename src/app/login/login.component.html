@@ -26,21 +26,27 @@
         <div class="col-lg-6">
             <div class="login mt-5">
     
-                <form action="" class=" text-center  ms-5 me-5 mb-5" >
+                <form action="" [formGroup]="loginForm" class=" text-center  ms-5 me-5 mb-5" >
                     <div>
                         <h2 class="text-white p-4" style="font-family: 'Times New Roman', Times, serif;">Login Here</h2>
-                        <strong class="text-dark">{{data}} {{dataService}}</strong>
+                        <strong class="text-dark">{{data}}</strong>
                     </div>
                   
                    
                     <div class="p-2">
-                        <input type="number" [(ngModel)]="acc" (change)="accnoChange($event)" id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                        <input formControlName="accNo"  type="text"  id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
                         <!-- <input type="number" #acc id="accNo" name="accountNumber" [placeholder]="accountNo"  class="border-0 text-center" style="font-family: 'Times New Roman', Times, serif;"> -->
                     </div>
+                    <div *ngIf="accNumber">
+                        <p>Account Number doesn't match</p>
+                    </div>
                     <div class="p-2">
-                        <input type="password" [(ngModel)]="pass" (change)="passChange($event)" id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
+                        <input formControlName="pwd" type="password"   id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;">
                          <!-- <input type="password" #pass id="pwd" name="userPass" [placeholder]="userPass"  class=" border-0 text-center" style="font-family: 'Times New Roman', Times, serif;"> -->
                     </div>
+                    <div *ngIf="userPassword">
+                        <p>Password doesn't match</p>
+                    </div> 
                     <p class="text-white">Don't have an account <a href="register">Register</a></p>
                   
                     <div class=" log-btn mt-3 mb-4">

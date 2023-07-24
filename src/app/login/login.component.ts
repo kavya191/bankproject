@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DatastorageService } from '../service/datastorage.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,9 @@ export class LoginComponent  {
   pass:any=""
   dataService:any=""
 
+  accNumber:boolean=false
+  userPassword:boolean=false
+
 
   //event binding using templete rendering variable
   // login(a:any,b:any){
@@ -26,8 +30,19 @@ export class LoginComponent  {
     
     
   // }
-  ////NgModel
-  constructor(private route:Router,private ds:DatastorageService){}
+  //loginmodel form
+  loginForm=this.fb.group({
+    accNo:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    pwd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
+
+  })
+  ///
+  constructor(private route:Router,
+    //access data from service data file
+    private ds:DatastorageService,
+    //FormBuilder - class in reactiveFormModule
+    private fb:FormBuilder){}
+  
 
   ngOnInit():void{
 //  this.dataService=this.ds.sData
@@ -37,25 +52,42 @@ export class LoginComponent  {
   }
 
   login(){
+  
+    let path=this.loginForm.value
+    let accNo=path.accNo
+    let pwd=path.pwd
+    console.log(accNo,pwd);
+    if(this.loginForm.valid){
+      if(accNo && pwd){
+
+      }else{
+        this.accNumber=true
+        this.userPassword=true
+      }
+     
+    }else{
+      alert("invalid form")
+    }
+   
 
     // this.ds.accessData("data passed to service data file  ")
     // alert("Logged In")
     // console.log(this.acc);
-    // console.log(this.pass);
-    this.route.navigateByUrl("home")
+    // // console.log(this.pass);
+    // this.route.navigateByUrl("home")
     
     
 
   }
 
-  accnoChange(event:any){
-    this.acc=event.target.value
-    console.log(this.acc);
+  // accnoChange(event:any){
+  //   this.acc=event.target.value
+  //   console.log(this.acc);
     
-  }
-  passChange(event:any){
-    this.pass=event.target.value
-    console.log(this.pass);
-  }
+  // }
+  // passChange(event:any){
+  //   this.pass=event.target.value
+  //   console.log(this.pass);
+  // }
 
 }

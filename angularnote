@@ -29,3 +29,12 @@ html->ts ts->html
                 - data changing in html at the same time data change in their corresponding ts file
                 - To get NgModel  we wa.nt to import an external module called formsmodule
                 - ids and name should be unique when using 2 way bindingng
+
+
+Api call in angular
+-----------------------------
+HttpClient is a class
+
+HttpClientModule  is a module.HttpClient inside this module.HttpClient contains post,put,get,patch,delete
+
+HttpClientModule-HttpClient-post,put,get,patch,delete
