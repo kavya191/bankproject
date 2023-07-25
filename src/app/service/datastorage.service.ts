@@ -12,12 +12,12 @@ export class DatastorageService {
 //depentency injection
   constructor(private http:HttpClient) { }
   //signupApi 
-    // signupApi(accNo:any,uName:any,pwd:any){
-    //   const bodyData={
-    //     accNo,uName,pwd
-    //   }
-    //   return this.http.post('http://localhost:3004/bankuser/userRegister',bodyData)
-    // }
+    signupApi(accNo:any,uName:any,pwd:any){
+      const bodyData={
+        accNo,uName,pwd
+      }
+      return this.http.post('http://localhost:3004/bankuser/userRegister',bodyData)
+    }
 
    // accessData(data:any){
   //   console.log(data);
@@ -25,6 +25,13 @@ export class DatastorageService {
 
 
   //login api
+  loginApi(accNo:any,pwd:any){
+    const bodyData={
+      accNo,pwd
+    }
+    return this.http.post('http://localhost:3004/bankuser/userLogin',bodyData)
+
+  }
 
     
 

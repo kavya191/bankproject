@@ -9,11 +9,20 @@
                 <div class="p-2">
                     <input type="text" formControlName="uName" id="uName" name="userName" placeholder="Username..." class="form-control border-0" style="font-family: 'Times New Roman', Times, serif;">
                 </div>
+                <div class="p-2" *ngIf="signUpModelForm.get('uName')?.errors&&signUpModelForm.get('uName')?.touched">
+                    <p class="text-danger">accept characters only</p>
+                </div>
                 <div class="p-2">
-                    <input class="title" formControlName="accNo" type="number" id="accNo" name="accountNumber" placeholder="Account No..." class="form-control border-0" style="font-family: 'Times New Roman', Times, serif;">
+                    <input class="title" formControlName="accNo" type="text" id="accNo" name="accountNumber" placeholder="Account No..." class="form-control border-0" style="font-family: 'Times New Roman', Times, serif;">
+                </div>
+                <div class="p-2" *ngIf="signUpModelForm.get('accNo')?.errors&&signUpModelForm.get('accNo')?.touched">
+                    <p class="text-danger">accept numbers only</p>
                 </div>
                 <div class="p-2">
                     <input type="password" id="pwd" formControlName="pwd" name="userPass" placeholder="Password..." class="form-control border-0" style="font-family: 'Times New Roman', Times, serif;">
+                </div>
+                <div class="p-2" *ngIf="signUpModelForm.get('pwd')?.errors&&signUpModelForm.get('pwd')?.touched">
+                    <p class="text-danger">accept letters and numbers only</p>
                 </div>
                 <div class="p-2">
                     <input type="password" id="cpwd" formControlName="cpwd" name="conPwd" placeholder="Confirm Password..." class="form-control border-0" style="font-family: 'Times New Roman', Times, serif;">
