@@ -22,6 +22,9 @@ export class DatastorageService {
    // accessData(data:any){
   //   console.log(data);
   //
+  // }
+
+
 
 
   //login api
@@ -33,7 +36,23 @@ export class DatastorageService {
 
   }
 
-    
+    //get userprofle api
+    getProfile(accNo:any){
+      return this.http.get('http://localhost:3004/bankuser/userProfile/'+accNo)
+    }
+  //balance enquiry api
+  getBalance(accNo:any){
+    return this.http.get('http://localhost:3004/bankuser/userBalance/'+accNo)
+  }
+  //money transfer api
+//fromAccno,toAccno,fromAccPwd,amount,dateandtime
+moneyTransferApi(fromAccno:any,toAccno:any,pwd:any,amount:any,date:any){
+  const bodyData={
+   fromAccno,toAccno,pwd,amount,date
+ }
+ return this.http.post('http://localhost:3004/bankuser/moneyTransfer',bodyData)
+}
 
-  // }
+
+
 }
