@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   message:any=""
   accountBalance:any={}
   status:any=true
-
+  shareAccNo:any=""
 
 
    //model driven form for money transfer
@@ -30,11 +30,17 @@ export class HomeComponent implements OnInit {
     private datePipe:DatePipe){}
 
   ngOnInit():void{
+    if(!localStorage.getItem("currentAccno")){
+      alert("please login first")
+      this.rout.navigateByUrl("")
+    }
     if(localStorage.getItem("currentUname")){
       this.user=localStorage.getItem("currentUname")
   }
   }
   logout(){
+   localStorage.removeItem("currentAccno")
+   localStorage.removeItem("currentUname")
     this.rout.navigateByUrl("")
   }
 
@@ -106,7 +112,33 @@ transfer(){
  
 
 }
+
 statement(){
   this.rout.navigateByUrl("statement")
+}
+//delete account
+deleteAccount(){
+  //share data
+  //access data from localstorage
+  if(localStorage.getItem('currentAccno')){
+   this.shareAccNo= localStorage.getItem('currentAccno')
+   console.log(this.shareAccNo);
+   
+  }
+  
+}
+//no button click cheyyumboo onCancel event  work cheyyum
+cancel(){
+  this.shareAccNo=""
+
+}
+//yes button click cheyyumbo
+deleteAc(event:any){
+console.log(event);
+this.ds.acDelete(event).subscribe((result:any)=>{
+  alert(`${event} deleted successfully`)
+  this.logout()
+})
+
 }
 }

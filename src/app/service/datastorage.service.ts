@@ -53,6 +53,16 @@ moneyTransferApi(fromAccno:any,toAccno:any,pwd:any,amount:any,date:any){
  return this.http.post('http://localhost:3004/bankuser/moneyTransfer',bodyData)
 }
 
+//transaction history api
+transactionHistory(accNo:any){
+  return this.http.get('http://localhost:3004/bankuser/userHistory/'+accNo)
+}
+//detele account api
+acDelete(accNo:any){
+  return this.http.delete('http://localhost:3004/bankuser/userDelete/'+accNo)
+
+}
+
 
 
 }

@@ -50,9 +50,19 @@
                                 <th class="border-1  text-white">#</th>
                                 <th class="border-1  text-white">Type</th>
                                 <th class="border-1  text-white">Amount</th>
+                                <th class="border-1  text-white">Account Holder Name</th>
                                 <th class="border-1  text-white">Date</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr *ngFor="let i of this.transactions; let j=index">
+                                <td>{{j+1}}</td>
+                                <td>{{i.type}}</td>
+                                <td>{{i.amount}}</td>
+                                <td>{{i.user}}</td>
+                                <td>{{i.date}}</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                

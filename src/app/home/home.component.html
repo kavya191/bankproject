@@ -1,6 +1,6 @@
 <div class="background">
 
-  <div class="row text-center p-2 ">
+  <div class="row text-center p-2 " [ngClass]="shareAccNo?'c':''" >
     <div class=" profile col-lg-4 mt-1  p-3 text-white " data-bs-toggle="modal"
       data-bs-target="#exampleModal" (click)="profileView()">View Profile <i class="fa-solid fa-user fa-bounce"></i></div>
     <div class="enquiry col-lg-4 mt-1 p-3 text-white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -8,23 +8,24 @@
     <div class=" transfer col-lg-4 mt-1  p-3 text-white" data-bs-toggle="modal" data-bs-target="#moneytransfer">Money
       Transfer <i class="fa-solid fa-money-bill-transfer fa-bounce"></i></div>
   </div>
-  <div class="row  text-center p-1">
+  <div class="row  text-center p-1" [ngClass]="shareAccNo?'c':''">
     <div class=" statement col-lg-4 mt-1 p-3 text-white " (click)="statement()">Account Statement <i
         class="fa-solid fa-money-check fa-bounce"></i></div>
     <div class=" logout col-lg-4 mt-1 p-3 text-white " (click)="logout()">Log Out <i
         class="fa-solid fa-person-walking-arrow-right fa-bounce"></i></div>
-    <div class=" delete col-lg-4 mt-1 p-3  text-white">Delete Account <i
+    <div class=" delete col-lg-4 mt-1 p-3  text-white" (click)="deleteAccount()">Delete Account <i
         class="fa-solid fa-person-circle-minus fa-bounce"></i></div>
   </div>
 
   <h1 class="text-center text-white fw-bold mt-5" style="font-family: 'Times New Roman', Times, serif;">Hi {{user}} Welcome </h1>
   <h2 class="text-center text-white fw-bold mt-3" style="font-family: 'Times New Roman', Times, serif;">Enjoy Net
     Banking With <span style="color: blue;">SBI</span></h2>
-  <p class="text-center text-white t-5" style="font-family: 'Times New Roman', Times, serif;">Lorem ipsum, dolor sit
+  <p [ngClass]="shareAccNo?'c':''" class="text-center text-white t-5" style="font-family: 'Times New Roman', Times, serif;">Lorem ipsum, dolor sit
     amet consectetur adipisicing elit. Labore qui repellendus nobis, illo ea adipisci neque amet tempore deleniti
     accusantium fugit odit<br> nostrum laboriosam laborum dolor necessitatibus odio sapiente in.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque animi nisi eos quis provident,<br> ipsa labore illo
     asperiores, odio quidem vero reiciendis vel iusto voluptas repellat ut quisquam. Eum, sint.</p>
+    <app-delete (onDelete)="deleteAc($event)" (onCancel)="cancel()" [childAccno]="shareAccNo"></app-delete>
     
 
 </div>

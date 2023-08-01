@@ -86,6 +86,9 @@ p{
 .bank{
     background-color: rgb(235, 243, 243);
 }
+.c{
+    visibility: hidden;
+}
    
 
 .s1{
