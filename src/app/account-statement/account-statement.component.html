@@ -35,11 +35,14 @@
     <div class="row">
         <div class="col-lg-6 col-md-6">
             <h2 class="text-center mt-4">Account Statement</h2>
+           <h4 class="mt-3 mb-3  ml-5 text-center w-75">
+            {{date | date:"medium"}}
+           </h4>
             <div class="statementbtn mt-5 me-4 ">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn ">All</button>
-                    <button type="button" class="btn ">Debit</button>
-                    <button type="button" class="btn ">Credit</button>
+                    <button (click)="searchKeyChange('')" type="button" class="btn ">All</button>
+                    <button (click)="searchKeyChange('DEBIT')" type="button" class="btn ">Debit</button>
+                    <button (click)="searchKeyChange('CREDIT')" type="button" class="btn ">Credit</button>
                 </div>
             </div>
             <div>
@@ -55,7 +58,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of this.transactions; let j=index">
+                            <tr *ngFor="let i of transactions | data: searchKey:'type'; let j=index">
                                 <td>{{j+1}}</td>
                                 <td>{{i.type}}</td>
                                 <td>{{i.amount}}</td>
@@ -67,7 +70,7 @@
                 </div>
                
                 <div class="exportbtn">
-                    <button type="button" class="btn mt-3">Export As <i
+                    <button type="button" class="btn mt-3" (click)=" convertPdf()">Export As <i
                             class="fa-solid fa-file-pdf"></i></button>
                 </div>
             </div>
@@ -76,7 +79,7 @@
         <div class="col-lg-6 col-md-6">
             <img src="../../assets/statement.jpg" alt="" width="100%">
             <div class="homebtn">
-                <button class="btn btn-secondary mt-3 me-3" type="button">Back To <i class="fa-solid fa-house-user fa-beat"></i></button>
+                <button class="btn btn-secondary mt-3 me-3" type="button" (click)=" backHome()">Back To <i class="fa-solid fa-house-user fa-beat"></i></button>
             </div>
         </div>
     </div>
