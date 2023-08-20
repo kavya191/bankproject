@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
+//method for header overloading
+const options={
+  headers:new HttpHeaders()
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +16,20 @@ export class DatastorageService {
 
 //depentency injection
   constructor(private http:HttpClient) { }
+
+  //method to add token  in api header
+  createHeader(){
+    //create object
+    const headers=new HttpHeaders()
+    //access token from localstorage
+    if(localStorage.getItem("token")){
+      var token=JSON.parse(localStorage.getItem("token") || "")
+      //add token to api header
+      //add object to api header
+      options.headers=headers.append("access_token",token)
+    }
+    return options
+  }
   //signupApi 
     signupApi(accNo:any,uName:any,pwd:any){
       const bodyData={
@@ -38,11 +57,11 @@ export class DatastorageService {
 
     //get userprofle api
     getProfile(accNo:any){
-      return this.http.get('http://localhost:3004/bankuser/userProfile/'+accNo)
+      return this.http.get('http://localhost:3004/bankuser/userProfile/'+accNo,this.createHeader())
     }
   //balance enquiry api
   getBalance(accNo:any){
-    return this.http.get('http://localhost:3004/bankuser/userBalance/'+accNo)
+    return this.http.get('http://localhost:3004/bankuser/userBalance/'+accNo,this.createHeader())
   }
   //money transfer api
 //fromAccno,toAccno,fromAccPwd,amount,dateandtime
@@ -50,16 +69,16 @@ moneyTransferApi(fromAccno:any,toAccno:any,pwd:any,amount:any,date:any){
   const bodyData={
    fromAccno,toAccno,pwd,amount,date
  }
- return this.http.post('http://localhost:3004/bankuser/moneyTransfer',bodyData)
+ return this.http.post('http://localhost:3004/bankuser/moneyTransfer',bodyData,this.createHeader())
 }
 
 //transaction history api
 transactionHistory(accNo:any){
-  return this.http.get('http://localhost:3004/bankuser/userHistory/'+accNo)
+  return this.http.get('http://localhost:3004/bankuser/userHistory/'+accNo,this.createHeader())
 }
 //detele account api
 acDelete(accNo:any){
-  return this.http.delete('http://localhost:3004/bankuser/userDelete/'+accNo)
+  return this.http.delete('http://localhost:3004/bankuser/userDelete/'+accNo,this.createHeader())
 
 }
 

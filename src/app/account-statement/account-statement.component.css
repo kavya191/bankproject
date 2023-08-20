@@ -27,7 +27,7 @@ th{
 .exportbtn{
     display: flex;
     justify-content: end;
-    margin-right: 3%;
+    margin-right: 5%;
     
 }
 button{
@@ -37,6 +37,7 @@ button{
 .homebtn{
     display: flex;
     justify-content: end;
+    margin-right: 6rem;
 
 }
 table{

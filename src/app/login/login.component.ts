@@ -9,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  data = "Happy Banking with us"
+  data = "Happy Banking With Us"
   accountNo = "Enter Acc No..."
   userPass = "Enter Password..."
   acc: any = ""
@@ -72,6 +72,10 @@ export class LoginComponent {
          //store uName,accNo,in local storage
          localStorage.setItem("currentUname",response.uName)
          localStorage.setItem("currentAccno",response.accNo)
+        //token store in local storage
+         localStorage.setItem("token",JSON.stringify(response.token))
+         console.log(response.token);
+         
          this.route.navigateByUrl("home")
         // console.log(response);
         

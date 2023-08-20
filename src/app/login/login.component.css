@@ -6,17 +6,20 @@
 }
 .login-main{
     background-color: hsl(193, 37%, 27%);
-    height: 100vh;
+    height: 140vh;
    
    
 }
 .login{
+  margin-top: 21%;
+}
+/* .login{ */
 /*    
     background-image: url(../../assets/loan.jpg);  */
     /* background-size:100% 100%;  */
     /* width: 100vw;
     height: 100vh;*/
-} 
+/* }  */
 input{
     width:15rem;
     height:3rem;
@@ -46,7 +49,7 @@ button{
     color: #000;
 }
 .btn {
-    position: fixed;
+  margin-top: 5rem;
     top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
@@ -59,8 +62,9 @@ button{
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    text-align: center;
-    margin-top: 1%;
+    text-align: center; 
+     margin-left: 6rem;
+     margin-bottom: 6rem;
     box-shadow: 2px 2px 2px 2px hwb(180 33% 44%);
   }
   .btn:hover {
@@ -69,12 +73,14 @@ button{
   }
   .loginImg{
     display: flex;
-    justify-content: center;
-    margin-top: 5%;
+    justify-content: center; 
+   
+   
     
   }
   img{
     border-radius: 1.5rem;
+    margin-top: 1rem;
   }
   /* .log-btn{
     display: flex;
