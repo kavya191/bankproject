@@ -35,7 +35,7 @@ export class DatastorageService {
       const bodyData={
         accNo,uName,pwd
       }
-      return this.http.post('http://localhost:3004/bankuser/userRegister',bodyData)
+      return this.http.post('https://bankingserver-x9hl.onrender.com/bankuser/userRegister',bodyData)
     }
 
    // accessData(data:any){
@@ -51,17 +51,17 @@ export class DatastorageService {
     const bodyData={
       accNo,pwd
     }
-    return this.http.post('http://localhost:3004/bankuser/userLogin',bodyData)
+    return this.http.post('https://bankingserver-x9hl.onrender.com/bankuser/userLogin',bodyData)
 
   }
 
     //get userprofle api
     getProfile(accNo:any){
-      return this.http.get('http://localhost:3004/bankuser/userProfile/'+accNo,this.createHeader())
+      return this.http.get('https://bankingserver-x9hl.onrender.com/bankuser/userProfile/'+accNo,this.createHeader())
     }
   //balance enquiry api
   getBalance(accNo:any){
-    return this.http.get('http://localhost:3004/bankuser/userBalance/'+accNo,this.createHeader())
+    return this.http.get('https://bankingserver-x9hl.onrender.com/bankuser/userBalance/'+accNo,this.createHeader())
   }
   //money transfer api
 //fromAccno,toAccno,fromAccPwd,amount,dateandtime
@@ -69,16 +69,16 @@ moneyTransferApi(fromAccno:any,toAccno:any,pwd:any,amount:any,date:any){
   const bodyData={
    fromAccno,toAccno,pwd,amount,date
  }
- return this.http.post('http://localhost:3004/bankuser/moneyTransfer',bodyData,this.createHeader())
+ return this.http.post('https://bankingserver-x9hl.onrender.com/bankuser/moneyTransfer',bodyData,this.createHeader())
 }
 
 //transaction history api
 transactionHistory(accNo:any){
-  return this.http.get('http://localhost:3004/bankuser/userHistory/'+accNo,this.createHeader())
+  return this.http.get('https://bankingserver-x9hl.onrender.com/bankuser/userHistory/'+accNo,this.createHeader())
 }
 //detele account api
 acDelete(accNo:any){
-  return this.http.delete('http://localhost:3004/bankuser/userDelete/'+accNo,this.createHeader())
+  return this.http.delete('https://bankingserver-x9hl.onrender.com/bankuser/userDelete/'+accNo,this.createHeader())
 
 }
 
