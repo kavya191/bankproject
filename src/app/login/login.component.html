@@ -51,7 +51,7 @@
                     <div class="p-2" *ngIf="loginModelForm.get('pwd')?.errors&&loginModelForm.get('pwd')?.touched">
                         <p class="text-danger">accept letters and numbers only</p>
                     </div>
-                    <p class="text-white" style="font-family: 'Times New Roman', Times, serif;">Don't have an account <a href="register">Register</a></p>
+                    <p class="text-white" style="font-family: 'Times New Roman', Times, serif;">Don't have an account <a routerLink="register">Register</a></p>
                   
                     <div class=" log-btn ">
                         <!-- <button class="btn text-center" (click)="login(acc,pass)">Sign In</button> -->
